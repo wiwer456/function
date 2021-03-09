@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Функция</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style>
+		/* фон - дорога */
+		.background {
+			background-image: url('road.jpg');
+			background-size: 100% 100%;
+			height: 400px;
+		}
+		/* девочка с позишн абсолют */
+		.human {
+			background-image: url('player.png');
+			background-size: 100% 100%;
+			height: 130px;
+			width: 50px;
+			
+			position: absolute;
+			transition: 1s;
+			left: 50px;
+			top: 10px;
+		}	
+	</style>
+</head>
+<body>
+	<!-- див с фоном картинкой -->
+	<div class="background">
+		<!-- див с фоном картинкой -->
+		<div class="human">
+		</div>
+	</div>
+	<p class="chat"></p>
+	<script>
+		/* Ряд заданий. 
+		0. Функцию moveLeft(), которая перемещает девочку влево, мы создали вместе.
+		1. Создай функцию moveRight(), которая перемещает девочку вправо.
+		2. Создай функцию moveBottom(), которая перемещает девочку вниз.
+		3. Создай функцию moveTop(), которая перемещает девочку вверх. 
+		4. Создай функцию talk() то что пишем в аргументе выводится в тег <p> с классом chat. Посмотри видео zadanie4.mp4 */
+	let girl = document.querySelector('.human')
+	let numLR = 50
+	
+	let numTB = 50
+	
+	
+
+	function moveRight(step){
+	numLR = numLR + step
+	girl.style.left = numLR + 'px'
+	}
+
+	function moveLeft(step){
+	numLR = numLR - step
+	girl.style.left = numLR + 'px' 
+	}
+
+
+	function moveTop(step){
+	numTB = numTB - step
+	girl.style.top = numTB + 'px' 
+	}
+
+	function moveBottom(step){
+	numTB = numTB + step
+	girl.style.top = numTB + 'px' 
+	}
+
+	function talk(txt){
+		document.querySelector('.chat').innerHTML = txt
+	}
+
+	</script>
+</body>
+</html>
